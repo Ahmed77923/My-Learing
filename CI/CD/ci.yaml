@@ -1,0 +1,56 @@
+# Developer
+#    ↓
+# git push / Pull Request
+#    ↓
+# GitHub Actions
+#    ↓
+# Checkout code
+#    ↓
+# Setup Python
+#    ↓
+# Install dependencies
+#    ↓
+# Lint / Validate
+#    ↓
+# Run tests
+#    ↓
+# Success ✅ / Failure ❌
+name: CI
+
+# When to run the workflow
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+# Jobs that will run
+jobs:
+  test:
+    # Where the job runs
+    runs-on: ubuntu-latest
+
+    steps:
+      # Download the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4  # this github action comand will setup the code in your repository
+
+      # Install Python
+      - name: Setup Python
+        uses: actions/setup-python@v5  # this github action comand will setup the python environment
+        with:
+          python-version: "3.11"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Run tests
+      - name: Test
+        run: |
+          python -m pytest -v
