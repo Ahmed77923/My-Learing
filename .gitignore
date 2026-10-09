@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test and coverage reports
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local environment and editor files
+.env
+.env.*
+.vscode/settings.json
+.idea/
+
+# Generated ML artifacts and local runs
+mlruns/
+mlartifacts/
+*.log
+*.pth
+
+# Generated image exports
+Sourse/test_images/
+Sourse/data
