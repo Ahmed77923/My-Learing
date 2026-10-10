@@ -92,6 +92,9 @@ def load_model():
 # -------------------------
 transform = transforms.Compose([
     transforms.Resize((32, 32)),
+    transforms.RandomHorizontalFlip(),     # i added this to augment the data
+    transforms.RandomCrop(32, padding=4),  # i added this to augment the data
+    transforms.RandomRotation(10),
     transforms.ToTensor(),
     transforms.Normalize(
         mean=(0.5, 0.5, 0.5),
