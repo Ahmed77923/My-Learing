@@ -39,3 +39,6 @@ mlartifacts/
 # Generated image exports
 Sourse/test_images/
 Sourse/data
+Sourse/mlflow.db
+
+mlflow/
