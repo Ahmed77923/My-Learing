@@ -41,4 +41,10 @@ Sourse/test_images/
 Sourse/data
 Sourse/mlflow.db
 
-mlflow/
+mlflow.db
+
+
+ResNet18/data/
+ResNet18/artifacts/
+
+loans.csv
